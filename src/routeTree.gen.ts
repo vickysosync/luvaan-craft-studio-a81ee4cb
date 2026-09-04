@@ -19,6 +19,7 @@ import { Route as ManufacturingRouteImport } from './routes/manufacturing'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ShoeCleaningRouteImport } from './routes/shoe-cleaning'
 import { Route as AdminCategoriesRouteImport } from './routes/admin.categories'
+import { Route as AdminCleaningRouteImport } from './routes/admin.cleaning'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as AdminOrdersRouteImport } from './routes/admin.orders'
@@ -75,6 +76,11 @@ const AdminCategoriesRoute = AdminCategoriesRouteImport.update({
   path: '/admin/categories',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminCleaningRoute = AdminCleaningRouteImport.update({
+  id: '/admin/cleaning',
+  path: '/admin/cleaning',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
   id: '/admin/dashboard',
   path: '/admin/dashboard',
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/portfolio': typeof PortfolioRoute
   '/shoe-cleaning': typeof ShoeCleaningRoute
   '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/cleaning': typeof AdminCleaningRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/orders': typeof AdminOrdersRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/portfolio': typeof PortfolioRoute
   '/shoe-cleaning': typeof ShoeCleaningRoute
   '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/cleaning': typeof AdminCleaningRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/orders': typeof AdminOrdersRoute
@@ -147,6 +155,7 @@ export interface FileRoutesById {
   '/portfolio': typeof PortfolioRoute
   '/shoe-cleaning': typeof ShoeCleaningRoute
   '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/cleaning': typeof AdminCleaningRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/orders': typeof AdminOrdersRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/shoe-cleaning'
     | '/admin/categories'
+    | '/admin/cleaning'
     | '/admin/dashboard'
     | '/admin/login'
     | '/admin/orders'
@@ -183,6 +193,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/shoe-cleaning'
     | '/admin/categories'
+    | '/admin/cleaning'
     | '/admin/dashboard'
     | '/admin/login'
     | '/admin/orders'
@@ -200,6 +211,7 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/shoe-cleaning'
     | '/admin/categories'
+    | '/admin/cleaning'
     | '/admin/dashboard'
     | '/admin/login'
     | '/admin/orders'
@@ -218,6 +230,7 @@ export interface RootRouteChildren {
   PortfolioRoute: typeof PortfolioRoute
   ShoeCleaningRoute: typeof ShoeCleaningRoute
   AdminCategoriesRoute: typeof AdminCategoriesRoute
+  AdminCleaningRoute: typeof AdminCleaningRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
   AdminLoginRoute: typeof AdminLoginRoute
   AdminOrdersRoute: typeof AdminOrdersRoute
@@ -297,6 +310,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminCategoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/cleaning': {
+      id: '/admin/cleaning'
+      path: '/admin/cleaning'
+      fullPath: '/admin/cleaning'
+      preLoaderRoute: typeof AdminCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/dashboard': {
       id: '/admin/dashboard'
       path: '/admin/dashboard'
@@ -346,6 +366,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioRoute: PortfolioRoute,
   ShoeCleaningRoute: ShoeCleaningRoute,
   AdminCategoriesRoute: AdminCategoriesRoute,
+  AdminCleaningRoute: AdminCleaningRoute,
   AdminDashboardRoute: AdminDashboardRoute,
   AdminLoginRoute: AdminLoginRoute,
   AdminOrdersRoute: AdminOrdersRoute,
