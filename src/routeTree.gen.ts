@@ -21,6 +21,7 @@ import { Route as ShoeCleaningRouteImport } from './routes/shoe-cleaning'
 import { Route as AdminBookingsRouteImport } from './routes/admin.bookings'
 import { Route as AdminCategoriesRouteImport } from './routes/admin.categories'
 import { Route as AdminCleaningRouteImport } from './routes/admin.cleaning'
+import { Route as AdminCustomersRouteImport } from './routes/admin.customers'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as AdminOrdersRouteImport } from './routes/admin.orders'
@@ -87,6 +88,11 @@ const AdminCleaningRoute = AdminCleaningRouteImport.update({
   path: '/admin/cleaning',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminCustomersRoute = AdminCustomersRouteImport.update({
+  id: '/admin/customers',
+  path: '/admin/customers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
   id: '/admin/dashboard',
   path: '/admin/dashboard',
@@ -126,6 +132,7 @@ export interface FileRoutesByFullPath {
   '/admin/bookings': typeof AdminBookingsRoute
   '/admin/categories': typeof AdminCategoriesRoute
   '/admin/cleaning': typeof AdminCleaningRoute
+  '/admin/customers': typeof AdminCustomersRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/orders': typeof AdminOrdersRoute
@@ -145,6 +152,7 @@ export interface FileRoutesByTo {
   '/admin/bookings': typeof AdminBookingsRoute
   '/admin/categories': typeof AdminCategoriesRoute
   '/admin/cleaning': typeof AdminCleaningRoute
+  '/admin/customers': typeof AdminCustomersRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/orders': typeof AdminOrdersRoute
@@ -165,6 +173,7 @@ export interface FileRoutesById {
   '/admin/bookings': typeof AdminBookingsRoute
   '/admin/categories': typeof AdminCategoriesRoute
   '/admin/cleaning': typeof AdminCleaningRoute
+  '/admin/customers': typeof AdminCustomersRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/orders': typeof AdminOrdersRoute
@@ -186,6 +195,7 @@ export interface FileRouteTypes {
     | '/admin/bookings'
     | '/admin/categories'
     | '/admin/cleaning'
+    | '/admin/customers'
     | '/admin/dashboard'
     | '/admin/login'
     | '/admin/orders'
@@ -205,6 +215,7 @@ export interface FileRouteTypes {
     | '/admin/bookings'
     | '/admin/categories'
     | '/admin/cleaning'
+    | '/admin/customers'
     | '/admin/dashboard'
     | '/admin/login'
     | '/admin/orders'
@@ -224,6 +235,7 @@ export interface FileRouteTypes {
     | '/admin/bookings'
     | '/admin/categories'
     | '/admin/cleaning'
+    | '/admin/customers'
     | '/admin/dashboard'
     | '/admin/login'
     | '/admin/orders'
@@ -244,6 +256,7 @@ export interface RootRouteChildren {
   AdminBookingsRoute: typeof AdminBookingsRoute
   AdminCategoriesRoute: typeof AdminCategoriesRoute
   AdminCleaningRoute: typeof AdminCleaningRoute
+  AdminCustomersRoute: typeof AdminCustomersRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
   AdminLoginRoute: typeof AdminLoginRoute
   AdminOrdersRoute: typeof AdminOrdersRoute
@@ -337,6 +350,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminCleaningRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/customers': {
+      id: '/admin/customers'
+      path: '/admin/customers'
+      fullPath: '/admin/customers'
+      preLoaderRoute: typeof AdminCustomersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/dashboard': {
       id: '/admin/dashboard'
       path: '/admin/dashboard'
@@ -388,6 +408,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminBookingsRoute: AdminBookingsRoute,
   AdminCategoriesRoute: AdminCategoriesRoute,
   AdminCleaningRoute: AdminCleaningRoute,
+  AdminCustomersRoute: AdminCustomersRoute,
   AdminDashboardRoute: AdminDashboardRoute,
   AdminLoginRoute: AdminLoginRoute,
   AdminOrdersRoute: AdminOrdersRoute,
