@@ -18,6 +18,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ManufacturingRouteImport } from './routes/manufacturing'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ShoeCleaningRouteImport } from './routes/shoe-cleaning'
+import { Route as AdminBookingsRouteImport } from './routes/admin.bookings'
 import { Route as AdminCategoriesRouteImport } from './routes/admin.categories'
 import { Route as AdminCleaningRouteImport } from './routes/admin.cleaning'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
@@ -71,6 +72,11 @@ const ShoeCleaningRoute = ShoeCleaningRouteImport.update({
   path: '/shoe-cleaning',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminBookingsRoute = AdminBookingsRouteImport.update({
+  id: '/admin/bookings',
+  path: '/admin/bookings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminCategoriesRoute = AdminCategoriesRouteImport.update({
   id: '/admin/categories',
   path: '/admin/categories',
@@ -117,6 +123,7 @@ export interface FileRoutesByFullPath {
   '/manufacturing': typeof ManufacturingRoute
   '/portfolio': typeof PortfolioRoute
   '/shoe-cleaning': typeof ShoeCleaningRoute
+  '/admin/bookings': typeof AdminBookingsRoute
   '/admin/categories': typeof AdminCategoriesRoute
   '/admin/cleaning': typeof AdminCleaningRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -135,6 +142,7 @@ export interface FileRoutesByTo {
   '/manufacturing': typeof ManufacturingRoute
   '/portfolio': typeof PortfolioRoute
   '/shoe-cleaning': typeof ShoeCleaningRoute
+  '/admin/bookings': typeof AdminBookingsRoute
   '/admin/categories': typeof AdminCategoriesRoute
   '/admin/cleaning': typeof AdminCleaningRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -154,6 +162,7 @@ export interface FileRoutesById {
   '/manufacturing': typeof ManufacturingRoute
   '/portfolio': typeof PortfolioRoute
   '/shoe-cleaning': typeof ShoeCleaningRoute
+  '/admin/bookings': typeof AdminBookingsRoute
   '/admin/categories': typeof AdminCategoriesRoute
   '/admin/cleaning': typeof AdminCleaningRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -174,6 +183,7 @@ export interface FileRouteTypes {
     | '/manufacturing'
     | '/portfolio'
     | '/shoe-cleaning'
+    | '/admin/bookings'
     | '/admin/categories'
     | '/admin/cleaning'
     | '/admin/dashboard'
@@ -192,6 +202,7 @@ export interface FileRouteTypes {
     | '/manufacturing'
     | '/portfolio'
     | '/shoe-cleaning'
+    | '/admin/bookings'
     | '/admin/categories'
     | '/admin/cleaning'
     | '/admin/dashboard'
@@ -210,6 +221,7 @@ export interface FileRouteTypes {
     | '/manufacturing'
     | '/portfolio'
     | '/shoe-cleaning'
+    | '/admin/bookings'
     | '/admin/categories'
     | '/admin/cleaning'
     | '/admin/dashboard'
@@ -229,6 +241,7 @@ export interface RootRouteChildren {
   ManufacturingRoute: typeof ManufacturingRoute
   PortfolioRoute: typeof PortfolioRoute
   ShoeCleaningRoute: typeof ShoeCleaningRoute
+  AdminBookingsRoute: typeof AdminBookingsRoute
   AdminCategoriesRoute: typeof AdminCategoriesRoute
   AdminCleaningRoute: typeof AdminCleaningRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
@@ -303,6 +316,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShoeCleaningRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/bookings': {
+      id: '/admin/bookings'
+      path: '/admin/bookings'
+      fullPath: '/admin/bookings'
+      preLoaderRoute: typeof AdminBookingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/categories': {
       id: '/admin/categories'
       path: '/admin/categories'
@@ -365,6 +385,7 @@ const rootRouteChildren: RootRouteChildren = {
   ManufacturingRoute: ManufacturingRoute,
   PortfolioRoute: PortfolioRoute,
   ShoeCleaningRoute: ShoeCleaningRoute,
+  AdminBookingsRoute: AdminBookingsRoute,
   AdminCategoriesRoute: AdminCategoriesRoute,
   AdminCleaningRoute: AdminCleaningRoute,
   AdminDashboardRoute: AdminDashboardRoute,
