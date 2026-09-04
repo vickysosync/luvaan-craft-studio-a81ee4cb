@@ -132,10 +132,12 @@
   font-weight: 600;
 }
 
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 disabled:opacity-50;
+}
+
 @layer components {
-  .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 disabled:opacity-50;
-  }
+
   .btn-primary {
     @apply btn bg-charcoal text-primary-foreground hover:bg-graphite hover:shadow-[var(--shadow-lift)] active:scale-[0.98];
   }
