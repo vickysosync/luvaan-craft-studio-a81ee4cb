@@ -18,9 +18,15 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ManufacturingRouteImport } from './routes/manufacturing'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ShoeCleaningRouteImport } from './routes/shoe-cleaning'
+import { Route as AdminBookingsRouteImport } from './routes/admin.bookings'
 import { Route as AdminCategoriesRouteImport } from './routes/admin.categories'
+import { Route as AdminCleaningRouteImport } from './routes/admin.cleaning'
+import { Route as AdminCustomersRouteImport } from './routes/admin.customers'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminEnquiriesRouteImport } from './routes/admin.enquiries'
+import { Route as AdminHomepageRouteImport } from './routes/admin.homepage'
 import { Route as AdminLoginRouteImport } from './routes/admin.login'
+import { Route as AdminOrdersRouteImport } from './routes/admin.orders'
 import { Route as AdminProductsRouteImport } from './routes/admin.products'
 import { Route as ProductIdRouteImport } from './routes/product.$id'
 
@@ -69,9 +75,24 @@ const ShoeCleaningRoute = ShoeCleaningRouteImport.update({
   path: '/shoe-cleaning',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminBookingsRoute = AdminBookingsRouteImport.update({
+  id: '/admin/bookings',
+  path: '/admin/bookings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminCategoriesRoute = AdminCategoriesRouteImport.update({
   id: '/admin/categories',
   path: '/admin/categories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCleaningRoute = AdminCleaningRouteImport.update({
+  id: '/admin/cleaning',
+  path: '/admin/cleaning',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCustomersRoute = AdminCustomersRouteImport.update({
+  id: '/admin/customers',
+  path: '/admin/customers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
@@ -79,9 +100,24 @@ const AdminDashboardRoute = AdminDashboardRouteImport.update({
   path: '/admin/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminEnquiriesRoute = AdminEnquiriesRouteImport.update({
+  id: '/admin/enquiries',
+  path: '/admin/enquiries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminHomepageRoute = AdminHomepageRouteImport.update({
+  id: '/admin/homepage',
+  path: '/admin/homepage',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminLoginRoute = AdminLoginRouteImport.update({
   id: '/admin/login',
   path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminOrdersRoute = AdminOrdersRouteImport.update({
+  id: '/admin/orders',
+  path: '/admin/orders',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminProductsRoute = AdminProductsRouteImport.update({
@@ -105,9 +141,15 @@ export interface FileRoutesByFullPath {
   '/manufacturing': typeof ManufacturingRoute
   '/portfolio': typeof PortfolioRoute
   '/shoe-cleaning': typeof ShoeCleaningRoute
+  '/admin/bookings': typeof AdminBookingsRoute
   '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/cleaning': typeof AdminCleaningRoute
+  '/admin/customers': typeof AdminCustomersRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/enquiries': typeof AdminEnquiriesRoute
+  '/admin/homepage': typeof AdminHomepageRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/orders': typeof AdminOrdersRoute
   '/admin/products': typeof AdminProductsRoute
   '/product/$id': typeof ProductIdRoute
 }
@@ -121,9 +163,15 @@ export interface FileRoutesByTo {
   '/manufacturing': typeof ManufacturingRoute
   '/portfolio': typeof PortfolioRoute
   '/shoe-cleaning': typeof ShoeCleaningRoute
+  '/admin/bookings': typeof AdminBookingsRoute
   '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/cleaning': typeof AdminCleaningRoute
+  '/admin/customers': typeof AdminCustomersRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/enquiries': typeof AdminEnquiriesRoute
+  '/admin/homepage': typeof AdminHomepageRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/orders': typeof AdminOrdersRoute
   '/admin/products': typeof AdminProductsRoute
   '/product/$id': typeof ProductIdRoute
 }
@@ -138,9 +186,15 @@ export interface FileRoutesById {
   '/manufacturing': typeof ManufacturingRoute
   '/portfolio': typeof PortfolioRoute
   '/shoe-cleaning': typeof ShoeCleaningRoute
+  '/admin/bookings': typeof AdminBookingsRoute
   '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/cleaning': typeof AdminCleaningRoute
+  '/admin/customers': typeof AdminCustomersRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/enquiries': typeof AdminEnquiriesRoute
+  '/admin/homepage': typeof AdminHomepageRoute
   '/admin/login': typeof AdminLoginRoute
+  '/admin/orders': typeof AdminOrdersRoute
   '/admin/products': typeof AdminProductsRoute
   '/product/$id': typeof ProductIdRoute
 }
@@ -156,9 +210,15 @@ export interface FileRouteTypes {
     | '/manufacturing'
     | '/portfolio'
     | '/shoe-cleaning'
+    | '/admin/bookings'
     | '/admin/categories'
+    | '/admin/cleaning'
+    | '/admin/customers'
     | '/admin/dashboard'
+    | '/admin/enquiries'
+    | '/admin/homepage'
     | '/admin/login'
+    | '/admin/orders'
     | '/admin/products'
     | '/product/$id'
   fileRoutesByTo: FileRoutesByTo
@@ -172,9 +232,15 @@ export interface FileRouteTypes {
     | '/manufacturing'
     | '/portfolio'
     | '/shoe-cleaning'
+    | '/admin/bookings'
     | '/admin/categories'
+    | '/admin/cleaning'
+    | '/admin/customers'
     | '/admin/dashboard'
+    | '/admin/enquiries'
+    | '/admin/homepage'
     | '/admin/login'
+    | '/admin/orders'
     | '/admin/products'
     | '/product/$id'
   id:
@@ -188,9 +254,15 @@ export interface FileRouteTypes {
     | '/manufacturing'
     | '/portfolio'
     | '/shoe-cleaning'
+    | '/admin/bookings'
     | '/admin/categories'
+    | '/admin/cleaning'
+    | '/admin/customers'
     | '/admin/dashboard'
+    | '/admin/enquiries'
+    | '/admin/homepage'
     | '/admin/login'
+    | '/admin/orders'
     | '/admin/products'
     | '/product/$id'
   fileRoutesById: FileRoutesById
@@ -205,9 +277,15 @@ export interface RootRouteChildren {
   ManufacturingRoute: typeof ManufacturingRoute
   PortfolioRoute: typeof PortfolioRoute
   ShoeCleaningRoute: typeof ShoeCleaningRoute
+  AdminBookingsRoute: typeof AdminBookingsRoute
   AdminCategoriesRoute: typeof AdminCategoriesRoute
+  AdminCleaningRoute: typeof AdminCleaningRoute
+  AdminCustomersRoute: typeof AdminCustomersRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminEnquiriesRoute: typeof AdminEnquiriesRoute
+  AdminHomepageRoute: typeof AdminHomepageRoute
   AdminLoginRoute: typeof AdminLoginRoute
+  AdminOrdersRoute: typeof AdminOrdersRoute
   AdminProductsRoute: typeof AdminProductsRoute
   ProductIdRoute: typeof ProductIdRoute
 }
@@ -277,11 +355,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShoeCleaningRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/bookings': {
+      id: '/admin/bookings'
+      path: '/admin/bookings'
+      fullPath: '/admin/bookings'
+      preLoaderRoute: typeof AdminBookingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/categories': {
       id: '/admin/categories'
       path: '/admin/categories'
       fullPath: '/admin/categories'
       preLoaderRoute: typeof AdminCategoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/cleaning': {
+      id: '/admin/cleaning'
+      path: '/admin/cleaning'
+      fullPath: '/admin/cleaning'
+      preLoaderRoute: typeof AdminCleaningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/customers': {
+      id: '/admin/customers'
+      path: '/admin/customers'
+      fullPath: '/admin/customers'
+      preLoaderRoute: typeof AdminCustomersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/dashboard': {
@@ -291,11 +390,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/enquiries': {
+      id: '/admin/enquiries'
+      path: '/admin/enquiries'
+      fullPath: '/admin/enquiries'
+      preLoaderRoute: typeof AdminEnquiriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/homepage': {
+      id: '/admin/homepage'
+      path: '/admin/homepage'
+      fullPath: '/admin/homepage'
+      preLoaderRoute: typeof AdminHomepageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/login': {
       id: '/admin/login'
       path: '/admin/login'
       fullPath: '/admin/login'
       preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/orders': {
+      id: '/admin/orders'
+      path: '/admin/orders'
+      fullPath: '/admin/orders'
+      preLoaderRoute: typeof AdminOrdersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/products': {
@@ -325,9 +445,15 @@ const rootRouteChildren: RootRouteChildren = {
   ManufacturingRoute: ManufacturingRoute,
   PortfolioRoute: PortfolioRoute,
   ShoeCleaningRoute: ShoeCleaningRoute,
+  AdminBookingsRoute: AdminBookingsRoute,
   AdminCategoriesRoute: AdminCategoriesRoute,
+  AdminCleaningRoute: AdminCleaningRoute,
+  AdminCustomersRoute: AdminCustomersRoute,
   AdminDashboardRoute: AdminDashboardRoute,
+  AdminEnquiriesRoute: AdminEnquiriesRoute,
+  AdminHomepageRoute: AdminHomepageRoute,
   AdminLoginRoute: AdminLoginRoute,
+  AdminOrdersRoute: AdminOrdersRoute,
   AdminProductsRoute: AdminProductsRoute,
   ProductIdRoute: ProductIdRoute,
 }
